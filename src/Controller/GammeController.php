@@ -40,12 +40,11 @@ class GammeController extends AbstractController
         $form->handleRequest($request);
 
         if($form->isSubmitted() && $form->isValid()){
-
+            
             if($request->request->count() > 0 ){
                
                // $manager->persist($note);
                 //$manager->flush();
-                dump($request);
             }
         }
         

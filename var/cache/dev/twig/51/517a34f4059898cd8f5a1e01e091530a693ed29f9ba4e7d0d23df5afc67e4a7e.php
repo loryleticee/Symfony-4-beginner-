@@ -65,6 +65,7 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
         // line 8
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 8, $this->source); })()), 'form_end');
         echo "
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -99,7 +100,8 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
 {{form_widget(formAdd.nom)}}
 {{form_widget(formAdd.Enregistrer,{'attr': {'class':'btn btn-success'}}) }}
 {{form_end(formAdd)}}
+
 {% endblock %}
-", "gamme/ajout.html.twig", "/Users/loryleticee/my-project/templates/gamme/ajout.html.twig");
+", "gamme/ajout.html.twig", "/Users/loryleticee/Symfony-4-beginner-/templates/gamme/ajout.html.twig");
     }
 }

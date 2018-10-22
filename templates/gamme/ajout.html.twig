@@ -7,11 +7,4 @@
 {{form_widget(formAdd.Enregistrer,{'attr': {'class':'btn btn-success'}}) }}
 {{form_end(formAdd)}}
 
-
-{% if($request->request->count() > 0 ){
-               
-               // $manager->persist($note);
-                //$manager->flush();
-                dump($request);
-            }%}
 {% endblock %}
