@@ -50,22 +50,27 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 4, $this->source); })()), 'form_start');
-        echo "
-
-";
-        // line 6
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 6, $this->source); })()), "nom", array()), 'widget');
-        echo "
+        echo "<div class = \"jumbotron\">
+    <h1 class=\"display-3\">NOTES / CHORDS</h1>
+    
 ";
         // line 7
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 7, $this->source); })()), "Enregistrer", array()), 'widget', array("attr" => array("class" => "btn btn-success")));
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 7, $this->source); })()), 'form_start');
         echo "
 ";
         // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 8, $this->source); })()), 'form_end');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 8, $this->source); })()), "nom", array()), 'widget', array("attr" => array("placeholder" => "Tape a note")));
+        echo "
+";
+        // line 9
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 9, $this->source); })()), "Enregistrer", array()), 'widget', array("attr" => array("class" => "btn btn-success")));
+        echo "
+";
+        // line 10
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 10, $this->source); })()), 'form_end');
         echo "
 
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -87,7 +92,7 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
 
     public function getDebugInfo()
     {
-        return array (  66 => 8,  62 => 7,  58 => 6,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  70 => 10,  66 => 9,  62 => 8,  58 => 7,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -95,12 +100,15 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
+<div class = \"jumbotron\">
+    <h1 class=\"display-3\">NOTES / CHORDS</h1>
+    
 {{form_start(formAdd)}}
-
-{{form_widget(formAdd.nom)}}
+{{form_widget(formAdd.nom,{'attr':{'placeholder':'Tape a note'}})}}
 {{form_widget(formAdd.Enregistrer,{'attr': {'class':'btn btn-success'}}) }}
 {{form_end(formAdd)}}
 
+</div>
 {% endblock %}
 ", "gamme/ajout.html.twig", "/Users/loryleticee/Symfony-4-beginner-/templates/gamme/ajout.html.twig");
     }

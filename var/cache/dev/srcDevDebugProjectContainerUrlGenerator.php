@@ -22,6 +22,9 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
             self::$declaredRoutes = array(
         'home' => array(array(), array('_controller' => 'App\\Controller\\GammeController::index'), array(), array(array('text', '/')), array(), array()),
         'administrer' => array(array(), array('_controller' => 'App\\Controller\\GammeController::add'), array(), array(array('text', '/administrer')), array(), array()),
+        'security_signup' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::registration'), array(), array(array('text', '/signup')), array(), array()),
+        'secure_login' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::login'), array(), array(array('text', '/login')), array(), array()),
+        'secure_logout' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::logout'), array(), array(array('text', '/signout')), array(), array()),
         '_twig_error_test' => array(array('code', '_format'), array('_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'), array('code' => '\\d+'), array(array('variable', '.', '[^/]++', '_format'), array('variable', '/', '\\d+', 'code'), array('text', '/_error')), array(), array()),
         '_wdt' => array(array('token'), array('_controller' => 'web_profiler.controller.profiler::toolbarAction'), array(), array(array('variable', '/', '[^/]++', 'token'), array('text', '/_wdt')), array(), array()),
         '_profiler_home' => array(array(), array('_controller' => 'web_profiler.controller.profiler::homeAction'), array(), array(array('text', '/_profiler/')), array(), array()),

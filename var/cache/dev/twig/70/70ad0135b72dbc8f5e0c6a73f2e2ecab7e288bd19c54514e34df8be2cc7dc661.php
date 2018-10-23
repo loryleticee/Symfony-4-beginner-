@@ -71,6 +71,40 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
         echo "\">Ajouter</a>
       </li>
       <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"";
+        // line 29
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_signup");
+        echo "\">Collaborer</a>
+      </li>
+
+      ";
+        // line 32
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 32, $this->source); })()), "user", array())) {
+            // line 33
+            echo "
+        <li class=\"nav-item\">
+          <a class=\"nav-link\" href=\"";
+            // line 35
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("secure_login");
+            echo "\">Sign In</a>
+        </li>
+
+      ";
+        } else {
+            // line 39
+            echo "
+      <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"";
+            // line 41
+            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("secure_logout");
+            echo "\">Sign Out</a>
+      </li>
+
+      ";
+        }
+        // line 45
+        echo "
+      <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"#\">About</a>
       </li>
     </ul>
@@ -79,12 +113,12 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
 </nav>
 
         ";
-        // line 36
+        // line 54
         $this->displayBlock('body', $context, $blocks);
-        // line 37
+        // line 55
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 38
+        // line 56
         echo "    </body>
 </html>
 ";
@@ -124,7 +158,7 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "stylesheets"));
 
         // line 7
-        echo "            <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/pulse/bootstrap.min.css\">
+        echo "            <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/solar/bootstrap.min.css\">
         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -134,7 +168,7 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
 
     }
 
-    // line 36
+    // line 54
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -151,7 +185,7 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
 
     }
 
-    // line 37
+    // line 55
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -180,7 +214,7 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
 
     public function getDebugInfo()
     {
-        return array (  155 => 37,  138 => 36,  127 => 7,  118 => 6,  100 => 5,  88 => 38,  85 => 37,  83 => 36,  70 => 26,  61 => 20,  50 => 12,  45 => 9,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  189 => 55,  172 => 54,  161 => 7,  152 => 6,  134 => 5,  122 => 56,  119 => 55,  117 => 54,  106 => 45,  99 => 41,  95 => 39,  88 => 35,  84 => 33,  82 => 32,  76 => 29,  70 => 26,  61 => 20,  50 => 12,  45 => 9,  43 => 6,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -191,7 +225,7 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
         <meta charset=\"UTF-8\">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}
-            <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/pulse/bootstrap.min.css\">
+            <link rel=\"stylesheet\" href=\"https://bootswatch.com/4/solar/bootstrap.min.css\">
         {% endblock %}
     </head>
     <body>
@@ -213,6 +247,24 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
         <a class=\"nav-link\" href=\"{{ path('administrer') }}\">Ajouter</a>
       </li>
       <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"{{ path('security_signup') }}\">Collaborer</a>
+      </li>
+
+      {% if not app.user %}
+
+        <li class=\"nav-item\">
+          <a class=\"nav-link\" href=\"{{ path('secure_login') }}\">Sign In</a>
+        </li>
+
+      {% else %}
+
+      <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"{{ path('secure_logout') }}\">Sign Out</a>
+      </li>
+
+      {% endif %}
+
+      <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"#\">About</a>
       </li>
     </ul>
@@ -224,6 +276,6 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/Users/loryleticee/my-project/templates/base.html.twig");
+", "base.html.twig", "/Users/loryleticee/Symfony-4-beginner-/templates/base.html.twig");
     }
 }

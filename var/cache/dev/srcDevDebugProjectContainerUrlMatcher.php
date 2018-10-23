@@ -66,6 +66,9 @@ class srcDevDebugProjectContainerUrlMatcher extends Symfony\Bundle\FrameworkBund
                 $routes = array(
                     '/' => array(array('_route' => 'home', '_controller' => 'App\\Controller\\GammeController::index'), null, null, null),
                     '/administrer' => array(array('_route' => 'administrer', '_controller' => 'App\\Controller\\GammeController::add'), null, null, null),
+                    '/signup' => array(array('_route' => 'security_signup', '_controller' => 'App\\Controller\\SecurityController::registration'), null, null, null),
+                    '/login' => array(array('_route' => 'secure_login', '_controller' => 'App\\Controller\\SecurityController::login'), null, null, null),
+                    '/signout' => array(array('_route' => 'secure_logout', '_controller' => 'App\\Controller\\SecurityController::logout'), null, null, null),
                     '/_profiler/' => array(array('_route' => '_profiler_home', '_controller' => 'web_profiler.controller.profiler::homeAction'), null, null, null),
                     '/_profiler/search' => array(array('_route' => '_profiler_search', '_controller' => 'web_profiler.controller.profiler::searchAction'), null, null, null),
                     '/_profiler/search_bar' => array(array('_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'), null, null, null),
