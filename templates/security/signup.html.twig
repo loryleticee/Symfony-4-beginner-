@@ -3,20 +3,21 @@
 {% block body %}
    <div class="jumbotron">
        <div class="form-group">
-    <h4 align = "center">Je ralie la cause </h4>
-        {{ form_start( formUser ) }}
-        {{ form_row( formUser.civilite ,{'label':'Civilité','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'75001'}} ) }}
-        {{ form_row( formUser.username,{'label':'Nom','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'Family name'}} ) }}
-        {{ form_row( formUser.username_first,{'label':'Prénom','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'First name'}} ) }}
-        {{ form_row( formUser.email,{'label':'Email','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'dupont@gmail.com'}} ) }}
-        {{ form_row( formUser.password,{'label':'Mot de passe','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'ZOh3dyt8z/za'}} ) }}
-        {{ form_row( formUser.confirm_password,{'label':'Confirmation du mot de passe','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'repeat your password'}} ) }}
-        {{ form_row( formUser.country ,{'label':'Pays','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'France'}} ) }}
-        {{ form_row( formUser.cp ,{'label':'Code Postal','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'75001'}} ) }}
-        {{ form_row( formUser.adress ,{'label':'Adresse','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'2 rue du Marais '}} ) }}
-        </br>
-        <button type="submit" class="btn btn-primary btn-lg btn-block"></button>
-        {{ form_end(formUser ) }}
+            <h4 align = "center">Je ralie la cause </h4>
+                {{ form_start( formUser ) }}
+                {{ form_row( formUser.civilite ,{'label':'Civilité','attr':{'class':'form-control','placeholder':'75001'}} ) }}
+                {{ form_row( formUser.username,{'label':'Nom','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'Family name'}} ) }}
+                {{ form_row( formUser.username_first,{'label':'Prénom','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'First name'}} ) }}
+                {{ form_row( formUser.email,{'label':'Email','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'dupont@gmail.com'}} ) }}
+                {{ form_row( formUser.password,{'label':'Mot de passe','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'ZOh3dyt8z/za'}} ) }}
+                {{ form_row( formUser.confirm_password,{'label':'Confirmation du mot de passe','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'repeat your password'}} ) }}
+                {{ form_row( formUser.country ,{'label':'Pays','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'France'}} ) }}
+                {{ form_row( formUser.cp ,{'label':'Code Postal','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'75001'}} ) }}
+                {{ form_row( formUser.adress ,{'label':'Adresse','attr':{'class':'form-control form-control-sm','id':'inputSmall','placeholder':'2 rue du Marais '}} ) }}
+                </br>
+                <button type="submit" class="btn btn-primary btn-lg btn-block"></button>
+                {{ form_end(formUser ) }}
         </div>
+        <h1 align = "center">BIENTOT DU PARALAXE et VUE.JS...</h1>
     </div>
 {% endblock %}

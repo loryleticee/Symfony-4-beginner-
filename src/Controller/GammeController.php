@@ -42,6 +42,7 @@ class GammeController extends AbstractController
         if($form->isSubmitted() && $form->isValid()){
 
             if($request->request->count() > 0 ){
+                //$accord = $note->getAccord();
                 
                 var_dump($_POST);
             }

@@ -50,7 +50,9 @@ class __TwigTemplate_205c3ccff8dcf4511822ae03ff7b05765e924638b8efa8f2250db316be3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 4
-        echo "    <form action = \"";
+        echo "    <h1 align = \"center\">BIENTOT DU PARALAXE et VUE.js...</h1>
+    <form action = \"";
+        // line 5
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("secure_login");
         echo "\" method = \"POST\">
         <div class = \"jumbotron\">
@@ -92,7 +94,7 @@ class __TwigTemplate_205c3ccff8dcf4511822ae03ff7b05765e924638b8efa8f2250db316be3
 
     public function getDebugInfo()
     {
-        return array (  53 => 4,  44 => 3,  15 => 1,);
+        return array (  56 => 5,  53 => 4,  44 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -100,6 +102,7 @@ class __TwigTemplate_205c3ccff8dcf4511822ae03ff7b05765e924638b8efa8f2250db316be3
         return new Twig_Source("{% extends 'base.html.twig' %}
 
 {% block body %}
+    <h1 align = \"center\">BIENTOT DU PARALAXE et VUE.js...</h1>
     <form action = \"{{ path('secure_login') }}\" method = \"POST\">
         <div class = \"jumbotron\">
               <legend>Alliance</legend>
