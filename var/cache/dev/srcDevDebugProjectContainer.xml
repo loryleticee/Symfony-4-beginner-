@@ -394,6 +394,9 @@
     <service id="App\Form\AccordType" class="App\Form\AccordType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Form\GenreType" class="App\Form\GenreType" public="false" autowire="true" autoconfigure="true">
+      <tag name="form.type"/>
+    </service>
     <service id="App\Form\NoteType" class="App\Form\NoteType" public="false" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
@@ -401,6 +404,10 @@
       <tag name="form.type"/>
     </service>
     <service id="App\Repository\AccordRepository" class="App\Repository\AccordRepository" public="false" autowire="true" autoconfigure="true">
+      <tag name="doctrine.repository_service"/>
+      <argument type="service" id="doctrine"/>
+    </service>
+    <service id="App\Repository\GenreRepository" class="App\Repository\GenreRepository" public="false" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -657,6 +664,7 @@
       </argument>
       <argument type="collection">
         <argument>App\Form\AccordType</argument>
+        <argument>App\Form\GenreType</argument>
         <argument>App\Form\NoteType</argument>
         <argument>App\Form\SinUpType</argument>
         <argument>Symfony\Component\Form\Extension\Core\Type\FormType</argument>
@@ -885,7 +893,7 @@
       <argument type="service" id="form.resolved_type_factory"/>
     </service>
     <service id="form.extension" class="Symfony\Component\Form\Extension\DependencyInjection\DependencyInjectionExtension" public="false">
-      <argument type="service" id=".service_locator.g7F9J.X"/>
+      <argument type="service" id=".service_locator.UCLOzi6"/>
       <argument type="collection">
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="iterator">
           <argument type="service" id="form.type_extension.form.http_foundation"/>
@@ -2641,7 +2649,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory" public="false">
-      <argument type="service" id=".service_locator.UHJg25e"/>
+      <argument type="service" id=".service_locator.FW8HgMI"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -4274,12 +4282,16 @@
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\AccordType" class="App\Form\AccordType" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\AccordType" class="App\Form\AccordType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\GenreType" class="App\Form\GenreType" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Form\GenreType" class="App\Form\GenreType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\NoteType" class="App\Form\NoteType" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\NoteType" class="App\Form\NoteType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\Form\FormTypeInterface.0.App\Form\SinUpType" class="App\Form\SinUpType" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Form\SinUpType" class="App\Form\SinUpType" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\AccordRepository" class="App\Repository\AccordRepository" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\AccordRepository" class="App\Repository\AccordRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\GenreRepository" class="App\Repository\GenreRepository" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\GenreRepository" class="App\Repository\GenreRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NoteRepository" class="App\Repository\NoteRepository" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NoteRepository" class="App\Repository\NoteRepository" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UsersRepository" class="App\Repository\UsersRepository" public="false" autowire="true" abstract="true"/>
@@ -4428,11 +4440,11 @@
         <argument>make:migration</argument>
       </call>
     </service>
-    <service id=".service_locator.8OOE5He" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.k6ojZJI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id=".service_locator.1kziBYP" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.GaSCbpf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
@@ -4445,12 +4457,12 @@
         <argument key="manager" type="service" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
-    <service id=".service_locator.69pBRxh" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Yzt274r" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Controller\GammeController::add" type="service" id=".service_locator.1kziBYP"/>
+        <argument key="App\Controller\GammeController::add" type="service" id=".service_locator.GaSCbpf"/>
         <argument key="App\Controller\SecurityController::registration" type="service" id=".service_locator.t7BdSgs"/>
-        <argument key="App\Controller\GammeController:add" type="service" id=".service_locator.1kziBYP"/>
+        <argument key="App\Controller\GammeController:add" type="service" id=".service_locator.GaSCbpf"/>
         <argument key="App\Controller\SecurityController:registration" type="service" id=".service_locator.t7BdSgs"/>
       </argument>
     </service>
@@ -4511,10 +4523,11 @@
       <argument type="service" id="debug.argument_resolver.variadic.inner"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
-    <service id=".service_locator.g7F9J.X" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.UCLOzi6" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Form\AccordType" type="service" id="App\Form\AccordType"/>
+        <argument key="App\Form\GenreType" type="service" id="App\Form\GenreType"/>
         <argument key="App\Form\NoteType" type="service" id="App\Form\NoteType"/>
         <argument key="App\Form\SinUpType" type="service" id="App\Form\SinUpType"/>
         <argument key="Symfony\Bridge\Doctrine\Form\Type\EntityType" type="service" id="form.type.entity"/>
@@ -4522,10 +4535,11 @@
         <argument key="Symfony\Component\Form\Extension\Core\Type\FormType" type="service" id="form.type.form"/>
       </argument>
     </service>
-    <service id=".service_locator.UHJg25e" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.FW8HgMI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Repository\AccordRepository" type="service" id="App\Repository\AccordRepository"/>
+        <argument key="App\Repository\GenreRepository" type="service" id="App\Repository\GenreRepository"/>
         <argument key="App\Repository\NoteRepository" type="service" id="App\Repository\NoteRepository"/>
         <argument key="App\Repository\UsersRepository" type="service" id="App\Repository\UsersRepository"/>
       </argument>
@@ -4695,7 +4709,7 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.69pBRxh"/>
+      <argument type="service" id=".service_locator.Yzt274r"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
@@ -5097,7 +5111,7 @@
     <service id="Twig\Environment" alias="twig" public="false"/>
     <service id="logger" alias="monolog.logger"/>
     <service id="Psr\Log\LoggerInterface" alias="monolog.logger" public="false"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.69pBRxh"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.Yzt274r"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id=".service_locator.AoifO_3" alias=".2_ServiceLocator~Hgj5.AD" public="false"/>

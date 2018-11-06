@@ -1,13 +1,23 @@
 {% extends 'base.html.twig' %}
 
+
 {% block body %}
 <div class = "jumbotron">
-    <h1 class="display-3">NOTES / CHORDS</h1>
-    
-{{form_start(formAdd)}}
-{{form_widget(formAdd.nom,{'attr':{'placeholder':'Tape a note'}})}}
-{{form_widget(formAdd.Enregistrer,{'attr': {'class':'btn btn-success'}}) }}
-{{form_end(formAdd)}}
+    <h1 class="display-3">New CHORDS</h1>
+    <div class="" >    
+        {{form_start(formNote)}}
+
+        <div class="">
+            {{form_widget(formNote.nom,{'attr':{'class':''}} ) }}
+
+        </div>
+    </div>
+    {{form_end(formNote)}}
+
+    {{form_start(formGenre)}}
+    {{form_widget(formGenre.nom)}}
+
+    {{form_end(formGenre)}} 
 
 </div>
 {% endblock %}

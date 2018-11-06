@@ -19,13 +19,12 @@ class Note
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=2)
+     * @ORM\Column(type="string", length=255)
      */
     private $nom;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Accord", inversedBy="notes")
-     * @ORM\JoinTable(name="note_accord")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Accord")
      */
     private $accord;
 

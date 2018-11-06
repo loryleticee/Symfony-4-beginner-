@@ -40,7 +40,7 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
 
     }
 
-    // line 3
+    // line 4
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -49,26 +49,41 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
-        // line 4
+        // line 5
         echo "<div class = \"jumbotron\">
-    <h1 class=\"display-3\">NOTES / CHORDS</h1>
-    
-";
-        // line 7
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 7, $this->source); })()), 'form_start');
-        echo "
-";
+    <h1 class=\"display-3\">New CHORDS</h1>
+    <div class=\"\" >    
+        ";
         // line 8
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 8, $this->source); })()), "nom", array()), 'widget', array("attr" => array("placeholder" => "Tape a note")));
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 8, $this->source); })()), 'form_start');
         echo "
-";
-        // line 9
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 9, $this->source); })()), "Enregistrer", array()), 'widget', array("attr" => array("class" => "btn btn-success")));
+
+        <div class=\"\">
+            ";
+        // line 11
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 11, $this->source); })()), "nom", array()), 'widget', array("attr" => array("class" => "")));
         echo "
-";
-        // line 10
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAdd"]) || array_key_exists("formAdd", $context) ? $context["formAdd"] : (function () { throw new Twig_Error_Runtime('Variable "formAdd" does not exist.', 10, $this->source); })()), 'form_end');
+
+        </div>
+    </div>
+    ";
+        // line 15
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 15, $this->source); })()), 'form_end');
         echo "
+
+    ";
+        // line 17
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 17, $this->source); })()), 'form_start');
+        echo "
+    ";
+        // line 18
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 18, $this->source); })()), "nom", array()), 'widget');
+        echo "
+
+    ";
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 20, $this->source); })()), 'form_end');
+        echo " 
 
 </div>
 ";
@@ -92,21 +107,31 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
 
     public function getDebugInfo()
     {
-        return array (  70 => 10,  66 => 9,  62 => 8,  58 => 7,  53 => 4,  44 => 3,  15 => 1,);
+        return array (  85 => 20,  80 => 18,  76 => 17,  71 => 15,  64 => 11,  58 => 8,  53 => 5,  44 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Twig_Source("{% extends 'base.html.twig' %}
 
+
 {% block body %}
 <div class = \"jumbotron\">
-    <h1 class=\"display-3\">NOTES / CHORDS</h1>
-    
-{{form_start(formAdd)}}
-{{form_widget(formAdd.nom,{'attr':{'placeholder':'Tape a note'}})}}
-{{form_widget(formAdd.Enregistrer,{'attr': {'class':'btn btn-success'}}) }}
-{{form_end(formAdd)}}
+    <h1 class=\"display-3\">New CHORDS</h1>
+    <div class=\"\" >    
+        {{form_start(formNote)}}
+
+        <div class=\"\">
+            {{form_widget(formNote.nom,{'attr':{'class':''}} ) }}
+
+        </div>
+    </div>
+    {{form_end(formNote)}}
+
+    {{form_start(formGenre)}}
+    {{form_widget(formGenre.nom)}}
+
+    {{form_end(formGenre)}} 
 
 </div>
 {% endblock %}

@@ -21,16 +21,16 @@ class Accord
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $type;
+    private $nom;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Note", mappedBy="accord")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Note")
      */
-    private $notes;
+    private $note;
 
     public function __construct()
     {
-        $this->notes = new ArrayCollection();
+        $this->note = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -38,14 +38,14 @@ class Accord
         return $this->id;
     }
 
-    public function getType(): ?string
+    public function getNom(): ?string
     {
-        return $this->type;
+        return $this->nom;
     }
 
-    public function setType(string $type): self
+    public function setNom(string $nom): self
     {
-        $this->type = $type;
+        $this->nom = $nom;
 
         return $this;
     }
@@ -53,16 +53,15 @@ class Accord
     /**
      * @return Collection|Note[]
      */
-    public function getNotes(): Collection
+    public function getNote(): Collection
     {
-        return $this->notes;
+        return $this->note;
     }
 
     public function addNote(Note $note): self
     {
-        if (!$this->notes->contains($note)) {
-            $this->notes[] = $note;
-            $note->addAccord($this);
+        if (!$this->note->contains($note)) {
+            $this->note[] = $note;
         }
 
         return $this;
@@ -70,9 +69,8 @@ class Accord
 
     public function removeNote(Note $note): self
     {
-        if ($this->notes->contains($note)) {
-            $this->notes->removeElement($note);
-            $note->removeAccord($this);
+        if ($this->note->contains($note)) {
+            $this->note->removeElement($note);
         }
 
         return $this;

@@ -100,7 +100,7 @@ class __TwigTemplate_48e08cb1f7e91f385ae95154f100e7538051b6cf9d4238cb48369c2a385
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formUser"]) || array_key_exists("formUser", $context) ? $context["formUser"] : (function () { throw new Twig_Error_Runtime('Variable "formUser" does not exist.', 19, $this->source); })()), 'form_end');
         echo "
         </div>
-        <h1 align = \"center\">BIENTOT DU PARALAXE ...</h1>
+        <h1 align = \"center\">BIENTOT DU PARALAXE et VUE.JS...</h1>
     </div>
 ";
         
@@ -148,7 +148,7 @@ class __TwigTemplate_48e08cb1f7e91f385ae95154f100e7538051b6cf9d4238cb48369c2a385
                 <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\"></button>
                 {{ form_end(formUser ) }}
         </div>
-        <h1 align = \"center\">BIENTOT DU PARALAXE ...</h1>
+        <h1 align = \"center\">BIENTOT DU PARALAXE et VUE.JS...</h1>
     </div>
 {% endblock %}", "security/signup.html.twig", "/Users/loryleticee/Symfony-4-beginner-/templates/security/signup.html.twig");
     }
