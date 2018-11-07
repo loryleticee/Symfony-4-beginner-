@@ -16,6 +16,6 @@ if (!\class_exists(srcDevDebugProjectContainer::class, false)) {
 
 return new \ContainerKrCXvTY\srcDevDebugProjectContainer(array(
     'container.build_hash' => 'KrCXvTY',
-    'container.build_id' => '9d054d55',
-    'container.build_time' => 1541473028,
+    'container.build_id' => 'a381f297',
+    'container.build_time' => 1541551833,
 ), __DIR__.\DIRECTORY_SEPARATOR.'ContainerKrCXvTY');

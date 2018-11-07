@@ -2,22 +2,43 @@
 
 
 {% block body %}
-<div class = "jumbotron">
-    <h1 class="display-3">New CHORDS</h1>
-    <div class="" >    
-        {{form_start(formNote)}}
-
-        <div class="">
-            {{form_widget(formNote.nom,{'attr':{'class':''}} ) }}
-
+<center>
+    <div class = "jumbotron" style="max-width: 60rem;" align="center">
+        <h1 class="display-3">CREATE CHORDS</h1>
+        <div class="" >  
+        <form action ="{{ path('administrer') }}" method="POST">
+            {{form_start(formNote)}}
+            {{form_start(formGenre)}}
+        <h3>Notes</h3>
+            <div class="custom-control custom-checkbox">
+                {{form_widget(formNote.nom,{'attr':{'class':''}}  ) }}
+            </div>
+        </div>
+        
+        {{form_widget(formGenre.nom)}}
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Enregistrer</button>
+        {{form_end(formNote)}}
+        {{form_end(formGenre)}} 
+    
+        </form>
+    </div>
+    
+    {% if NewChord is defined %}
+    <div class="col-lg-4" align="center">
+        <div class="card text-white bg-second mb-3" style="max-width: 65rem;">
+            <div class="card-header">
+                CHORDS
+            </div>
+            <div class="list-group">
+                <ul>
+                    {% for item in NewChord %}
+                        <li class="list-group-item list-group-item-action">{{item.nom}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
-    {{form_end(formNote)}}
 
-    {{form_start(formGenre)}}
-    {{form_widget(formGenre.nom)}}
-
-    {{form_end(formGenre)}} 
-
-</div>
+    {% endif %}
+</center>
 {% endblock %}

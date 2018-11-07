@@ -50,42 +50,83 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new Twig_Profiler_Profile($this->getTemplateName(), "block", "body"));
 
         // line 5
-        echo "<div class = \"jumbotron\">
-    <h1 class=\"display-3\">New CHORDS</h1>
-    <div class=\"\" >    
-        ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 8, $this->source); })()), 'form_start');
+        echo "<center>
+    <div class = \"jumbotron\" style=\"max-width: 60rem;\" align=\"center\">
+        <h1 class=\"display-3\">CREATE CHORDS</h1>
+        <div class=\"\" >  
+        <form action =\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("administrer");
+        echo "\" method=\"POST\">
+            ";
+        // line 10
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 10, $this->source); })()), 'form_start');
         echo "
-
-        <div class=\"\">
             ";
         // line 11
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 11, $this->source); })()), "nom", array()), 'widget', array("attr" => array("class" => "")));
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 11, $this->source); })()), 'form_start');
         echo "
-
+        <h3>Notes</h3>
+            <div class=\"custom-control custom-checkbox\">
+                ";
+        // line 14
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 14, $this->source); })()), "nom", array()), 'widget', array("attr" => array("class" => "")));
+        echo "
+            </div>
         </div>
-    </div>
-    ";
-        // line 15
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 15, $this->source); })()), 'form_end');
-        echo "
-
-    ";
-        // line 17
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 17, $this->source); })()), 'form_start');
-        echo "
-    ";
+        
+        ";
         // line 18
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 18, $this->source); })()), "nom", array()), 'widget');
         echo "
+        <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\">Enregistrer</button>
+        ";
+        // line 20
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 20, $this->source); })()), 'form_end');
+        echo "
+        ";
+        // line 21
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 21, $this->source); })()), 'form_end');
+        echo " 
+    
+        </form>
+    </div>
+    
+    ";
+        // line 26
+        if ((isset($context["NewChord"]) || array_key_exists("NewChord", $context))) {
+            // line 27
+            echo "    <div class=\"col-lg-4\" align=\"center\">
+        <div class=\"card text-white bg-second mb-3\" style=\"max-width: 65rem;\">
+            <div class=\"card-header\">
+                CHORDS
+            </div>
+            <div class=\"list-group\">
+                <ul>
+                    ";
+            // line 34
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable((isset($context["NewChord"]) || array_key_exists("NewChord", $context) ? $context["NewChord"] : (function () { throw new Twig_Error_Runtime('Variable "NewChord" does not exist.', 34, $this->source); })()));
+            foreach ($context['_seq'] as $context["_key"] => $context["item"]) {
+                // line 35
+                echo "                        <li class=\"list-group-item list-group-item-action\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["item"], "nom", array()), "html", null, true);
+                echo "</li>
+                    ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['item'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 37
+            echo "                </ul>
+            </div>
+        </div>
+    </div>
 
     ";
-        // line 20
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 20, $this->source); })()), 'form_end');
-        echo " 
-
-</div>
+        }
+        // line 43
+        echo "</center>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -107,7 +148,7 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
 
     public function getDebugInfo()
     {
-        return array (  85 => 20,  80 => 18,  76 => 17,  71 => 15,  64 => 11,  58 => 8,  53 => 5,  44 => 4,  15 => 1,);
+        return array (  129 => 43,  121 => 37,  112 => 35,  108 => 34,  99 => 27,  97 => 26,  89 => 21,  85 => 20,  80 => 18,  73 => 14,  67 => 11,  63 => 10,  59 => 9,  53 => 5,  44 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -116,24 +157,45 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
 
 
 {% block body %}
-<div class = \"jumbotron\">
-    <h1 class=\"display-3\">New CHORDS</h1>
-    <div class=\"\" >    
-        {{form_start(formNote)}}
-
-        <div class=\"\">
-            {{form_widget(formNote.nom,{'attr':{'class':''}} ) }}
-
+<center>
+    <div class = \"jumbotron\" style=\"max-width: 60rem;\" align=\"center\">
+        <h1 class=\"display-3\">CREATE CHORDS</h1>
+        <div class=\"\" >  
+        <form action =\"{{ path('administrer') }}\" method=\"POST\">
+            {{form_start(formNote)}}
+            {{form_start(formGenre)}}
+        <h3>Notes</h3>
+            <div class=\"custom-control custom-checkbox\">
+                {{form_widget(formNote.nom,{'attr':{'class':''}}  ) }}
+            </div>
+        </div>
+        
+        {{form_widget(formGenre.nom)}}
+        <button type=\"submit\" class=\"btn btn-primary btn-lg btn-block\">Enregistrer</button>
+        {{form_end(formNote)}}
+        {{form_end(formGenre)}} 
+    
+        </form>
+    </div>
+    
+    {% if NewChord is defined %}
+    <div class=\"col-lg-4\" align=\"center\">
+        <div class=\"card text-white bg-second mb-3\" style=\"max-width: 65rem;\">
+            <div class=\"card-header\">
+                CHORDS
+            </div>
+            <div class=\"list-group\">
+                <ul>
+                    {% for item in NewChord %}
+                        <li class=\"list-group-item list-group-item-action\">{{item.nom}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
         </div>
     </div>
-    {{form_end(formNote)}}
 
-    {{form_start(formGenre)}}
-    {{form_widget(formGenre.nom)}}
-
-    {{form_end(formGenre)}} 
-
-</div>
+    {% endif %}
+</center>
 {% endblock %}
 ", "gamme/ajout.html.twig", "/Users/loryleticee/Symfony-4-beginner-/templates/gamme/ajout.html.twig");
     }

@@ -13,7 +13,6 @@ use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\FormRenderer;
 use Doctrine\Common\Persistence\ObjectManager;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bundle\FrameworkBundle\Tests\Fixtures\Validation\Article;
 //use Symfony\Component\Form\Tests\Fixtures\Type;
 
 class GammeController extends AbstractController
@@ -38,7 +37,7 @@ class GammeController extends AbstractController
      */
     public function add(Note $note = null ,Accord $accord = null,Genre $genre = null ,Request $request,ObjectManager $manager)
     {  
-        
+       
         //Type par default 
         $manager = $this->getDoctrine()->getRepository('App:Genre');
         $defaultType = $manager->find(2);
@@ -49,29 +48,83 @@ class GammeController extends AbstractController
         if(!$note){
             $note = new Note();
         }
-        //
-        $formGenre=$this->createForm(GenreType::class ,$genre ,array('typeParDefault'=>$defaultType));
-        $formGenre->handleRequest($request);
 
-        //
+        $formGenre=$this->createForm(GenreType::class ,$genre ,array('typeParDefault'=> $defaultType));
         $formNote=$this->createForm(NoteType::class ,$note);
-        $formNote->handleRequest($request);
 
-        if($formNote->isSubmitted() && $formNote->isValid()){
 
-            if($request->request->count() > 0 ){
+        if($request->isMethod('POST') && $request->request->count() > 0){
+
+           // dump($request->request->all());die; 
+
+           //Recupere le genre selectionné dans la liste 'M' par défault
+            $leGenre = $request->request->get('genre');
+
+            //Recupere le repository Genre 
+            $manager = $this->getDoctrine()->getRepository('App:Genre');
+            /*Recupere l'objet $genre avec l'id passé en parametre
+            *@param Genre object 
+            */
+            $leGenre = $manager->find($leGenre["nom"]);
+            /*Recupere le nom de l'objet 
+            @param string
+            */
+            $leGenre = $leGenre->getNom();
+        
+
+            //Recupere les notes selectionnés
+            $lesNotes = $request->request->get('note');
+            //Recupere le repository Note
+            $manager = $this->getDoctrine()->getRepository('App:Note');
+            /*Recupere l'objet $note avec l'id passé en parametre
+            *@param Note object 
+            */
+            $note = $manager->find($lesNotes["nom"][0]);
+            /*Recupere le nom de l'objet 
+            @param string
+            */
+            $nomNote = $note->getNom();
+
+            //
+            $accord->setNom($nomNote.' '.$leGenre);
+
+            
+            
+            for($i=0;$i<count($lesNotes['nom']);$i++){
+                $note = $manager->find($lesNotes['nom'][$i]);
+                $accord->addNote($note);
+            }
+            
+            
+            /*
+            $i = 0;
+            foreach($lesNotes as $item ){
+                dump($item);
+                $note = $manager->findByNom($item);
+
+                $accord->addNote($note);
+
+                $i++;
+            }    
+            dump($accord);die;
+            */
+
+            
                 $manager = $this->getDoctrine()->getManager();
                 $manager->persist($accord);
                 $manager->flush();
-                
-                return new Reponse ("vrvrvr");
-            }
+                return $this->redirectToRoute('administrer');
+            
            
         }
-        
+
+        $manager = $this->getDoctrine()->getRepository('App:Accord');
+        $accord = $manager->findAll();
+
         return $this->render('gamme/ajout.html.twig', [
             'formGenre' => $formGenre->createView(),
             'formNote'=> $formNote->createView(),
+            'NewChord'=> $accord,
         ]);
     }
 }
