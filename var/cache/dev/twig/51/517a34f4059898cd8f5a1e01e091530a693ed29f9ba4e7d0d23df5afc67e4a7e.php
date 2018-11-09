@@ -70,7 +70,7 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
             <div class=\"custom-control custom-checkbox\">
                 ";
         // line 14
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 14, $this->source); })()), "nom", array()), 'widget', array("attr" => array("class" => "")));
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formNote"]) || array_key_exists("formNote", $context) ? $context["formNote"] : (function () { throw new Twig_Error_Runtime('Variable "formNote" does not exist.', 14, $this->source); })()), "nom", array()), 'widget', array("attr" => array("class" => "", "required" => "required")));
         echo "
             </div>
         </div>
@@ -126,7 +126,23 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
     ";
         }
         // line 43
-        echo "</center>
+        echo "
+</center>
+<div class = \"jumbotron\" style=\"max-width: 20rem;\" align=\"left\">
+    Ajouter note 
+    ";
+        // line 47
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 47, $this->source); })()), 'form_start');
+        echo "
+    ";
+        // line 48
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 48, $this->source); })()), "nom", array()), 'row');
+        echo "
+    ";
+        // line 49
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formGenre"]) || array_key_exists("formGenre", $context) ? $context["formGenre"] : (function () { throw new Twig_Error_Runtime('Variable "formGenre" does not exist.', 49, $this->source); })()), 'form_end');
+        echo "
+</div>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -148,7 +164,7 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
 
     public function getDebugInfo()
     {
-        return array (  129 => 43,  121 => 37,  112 => 35,  108 => 34,  99 => 27,  97 => 26,  89 => 21,  85 => 20,  80 => 18,  73 => 14,  67 => 11,  63 => 10,  59 => 9,  53 => 5,  44 => 4,  15 => 1,);
+        return array (  143 => 49,  139 => 48,  135 => 47,  129 => 43,  121 => 37,  112 => 35,  108 => 34,  99 => 27,  97 => 26,  89 => 21,  85 => 20,  80 => 18,  73 => 14,  67 => 11,  63 => 10,  59 => 9,  53 => 5,  44 => 4,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -166,7 +182,7 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
             {{form_start(formGenre)}}
         <h3>Notes</h3>
             <div class=\"custom-control custom-checkbox\">
-                {{form_widget(formNote.nom,{'attr':{'class':''}}  ) }}
+                {{form_widget(formNote.nom,{'attr':{'class':'','required':'required'}}  ) }}
             </div>
         </div>
         
@@ -195,7 +211,14 @@ class __TwigTemplate_db9c105c5a99755aacd9e1a50eb81c71c102d2ff6dcfa9cf04baf115be1
     </div>
 
     {% endif %}
+
 </center>
+<div class = \"jumbotron\" style=\"max-width: 20rem;\" align=\"left\">
+    Ajouter note 
+    {{form_start(formGenre)}}
+    {{form_row(formGenre.nom)}}
+    {{form_end(formGenre)}}
+</div>
 {% endblock %}
 ", "gamme/ajout.html.twig", "/Users/loryleticee/Symfony-4-beginner-/templates/gamme/ajout.html.twig");
     }

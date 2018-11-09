@@ -22,8 +22,8 @@ class NoteType extends AbstractType
                     return $note->getNom();
                 },
                 'multiple' => true,
-                'expanded' => true
-            )) ;
+                'expanded' => true,
+            ));
     }
 
     public function configureOptions(OptionsResolver $resolver)

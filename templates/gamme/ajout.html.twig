@@ -11,7 +11,7 @@
             {{form_start(formGenre)}}
         <h3>Notes</h3>
             <div class="custom-control custom-checkbox">
-                {{form_widget(formNote.nom,{'attr':{'class':''}}  ) }}
+                {{form_widget(formNote.nom,{'attr':{'class':'','required':'required'}}  ) }}
             </div>
         </div>
         
@@ -40,5 +40,12 @@
     </div>
 
     {% endif %}
+
 </center>
+<div class = "jumbotron" style="max-width: 20rem;" align="left">
+    Ajouter note 
+    {{form_start(formGenre)}}
+    {{form_row(formGenre.nom)}}
+    {{form_end(formGenre)}}
+</div>
 {% endblock %}
