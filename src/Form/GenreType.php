@@ -13,13 +13,8 @@ class GenreType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            //->add('nb_notes')
-            ->add('nom', EntityType::class, array(
-                'class' => Genre::class,
-                'choice_label' => function ($genre) {
-                    return $genre->getNom();
-                }
-            ));
+            >add('type');
+
             
     }
 

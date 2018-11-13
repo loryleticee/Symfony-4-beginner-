@@ -22,6 +22,9 @@ class srcDevDebugProjectContainerUrlGenerator extends Symfony\Component\Routing\
             self::$declaredRoutes = array(
         'home' => array(array(), array('_controller' => 'App\\Controller\\GammeController::index'), array(), array(array('text', '/')), array(), array()),
         'administrer' => array(array(), array('_controller' => 'App\\Controller\\GammeController::add'), array(), array(array('text', '/administrer')), array(), array()),
+        'list_note' => array(array(), array('_controller' => 'App\\Controller\\NoteController::index'), array(), array(array('text', '/note')), array(), array()),
+        'add_note' => array(array(), array('_controller' => 'App\\Controller\\NoteController::addNote'), array(), array(array('text', '/addnote')), array(), array()),
+        'delete_note' => array(array(), array('_controller' => 'App\\Controller\\NoteController::deleteNote'), array(), array(array('text', '/delnote')), array(), array()),
         'security_signup' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::registration'), array(), array(array('text', '/signup')), array(), array()),
         'secure_login' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::login'), array(), array(array('text', '/login')), array(), array()),
         'secure_logout' => array(array(), array('_controller' => 'App\\Controller\\SecurityController::logout'), array(), array(array('text', '/signout')), array(), array()),

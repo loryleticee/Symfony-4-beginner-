@@ -73,36 +73,42 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"";
         // line 29
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("list_note");
+        echo "\">Ajouter notes</a>
+      </li>
+      <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"";
+        // line 32
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("security_signup");
         echo "\">Collaborer</a>
       </li>
 
       ";
-        // line 32
-        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 32, $this->source); })()), "user", array())) {
-            // line 33
+        // line 35
+        if ( !twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new Twig_Error_Runtime('Variable "app" does not exist.', 35, $this->source); })()), "user", array())) {
+            // line 36
             echo "
         <li class=\"nav-item\">
           <a class=\"nav-link\" href=\"";
-            // line 35
+            // line 38
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("secure_login");
             echo "\">Sign In</a>
         </li>
 
       ";
         } else {
-            // line 39
+            // line 42
             echo "
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"";
-            // line 41
+            // line 44
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("secure_logout");
             echo "\">Sign Out</a>
       </li>
 
       ";
         }
-        // line 45
+        // line 48
         echo "
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"#\">About</a>
@@ -113,12 +119,12 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
 </nav>
 
         ";
-        // line 54
+        // line 57
         $this->displayBlock('body', $context, $blocks);
-        // line 55
+        // line 58
         echo "        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 56
+        // line 59
         echo "    </body>
 </html>
 ";
@@ -168,7 +174,7 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
 
     }
 
-    // line 54
+    // line 57
     public function block_body($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -185,7 +191,7 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
 
     }
 
-    // line 55
+    // line 58
     public function block_javascripts($context, array $blocks = array())
     {
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
@@ -214,7 +220,7 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
 
     public function getDebugInfo()
     {
-        return array (  189 => 55,  172 => 54,  161 => 7,  152 => 6,  134 => 5,  122 => 56,  119 => 55,  117 => 54,  106 => 45,  99 => 41,  95 => 39,  88 => 35,  84 => 33,  82 => 32,  76 => 29,  70 => 26,  61 => 20,  50 => 12,  45 => 9,  43 => 6,  39 => 5,  33 => 1,);
+        return array (  195 => 58,  178 => 57,  167 => 7,  158 => 6,  140 => 5,  128 => 59,  125 => 58,  123 => 57,  112 => 48,  105 => 44,  101 => 42,  94 => 38,  90 => 36,  88 => 35,  82 => 32,  76 => 29,  70 => 26,  61 => 20,  50 => 12,  45 => 9,  43 => 6,  39 => 5,  33 => 1,);
     }
 
     public function getSourceContext()
@@ -245,6 +251,9 @@ class __TwigTemplate_c56bfb5535de570b619612eafce0d994f7731339db6330a7225b93b3aed
       </li>
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"{{ path('administrer') }}\">Ajouter</a>
+      </li>
+      <li class=\"nav-item\">
+        <a class=\"nav-link\" href=\"{{ path('list_note') }}\">Ajouter notes</a>
       </li>
       <li class=\"nav-item\">
         <a class=\"nav-link\" href=\"{{ path('security_signup') }}\">Collaborer</a>

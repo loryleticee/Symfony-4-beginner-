@@ -8,6 +8,7 @@ use App\Entity\Note;
 use App\Entity\Accord;
 use App\Entity\Genre;
 use App\Form\GenreType;
+use App\Form\AccordType;
 use App\Form\NoteType;
 use Symfony\Component\Form\FormView;
 use Symfony\Component\Form\FormRenderer;
@@ -49,7 +50,7 @@ class GammeController extends AbstractController
             $note = new Note();
         }
 
-        $formGenre=$this->createForm(GenreType::class ,$genre ,array('typeParDefault'=> $defaultType));
+        $formGenre=$this->createForm(AccordType::class ,$accord ,array('typeParDefault'=> $defaultType));
         $formNote=$this->createForm(NoteType::class ,$note);
 
 

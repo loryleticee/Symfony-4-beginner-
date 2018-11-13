@@ -1,0 +1,33 @@
+{% include './base.html.twig' %}
+
+<html>
+    <div class="jumbotron " >
+    <center>Liste de note </center>
+    
+        <div class="list-group">
+            {%  if notes %}
+        <ul>
+                {% for note in notes %}
+               <li>
+                    {{ note.nom }}
+                    <a href= "{{ path('delete_note') }} ">x</a>
+                </li>
+                {% endfor %}
+           
+            {% endif %}
+        </ul>
+        </div>
+        
+        
+    </div>
+    <div class="jumbotron">
+    <center>
+        <label> Ajouter note</label> 
+    {{form_start(form,{'action': path('add_note')}) }}
+    {{form_row(form.nom)}}
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Enregistrer</button>
+    {{form_end(form)}}
+    </center>
+    </div>
+
+</html>
